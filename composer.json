@@ -1,0 +1,23 @@
+{
+    "name": "sanoma/zf1-mandrill",
+    "description": "Zend_Mail_Transport implementation using Mandrill",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Stenvall",
+            "email": "sam.stenvall@nordsoftware.com"
+        }
+    ],
+    "require": {
+        "mandrill/mandrill": "^1.0"
+    },
+    "require-dev": {
+        "zendframework/zendframework1": "^1.12"
+    },
+    "autoload": {
+        "psr-0": {
+            "Zend_": "src"
+        }
+    }
+}
