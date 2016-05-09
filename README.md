@@ -12,7 +12,7 @@ composer require sanoma/zf1-mandrill
 
 Configure Zend to use the transport using the following snippet:
 
-```
+```php
 <?php
 
 $apiKey = 'MANDRILL_API_TOKEN';
@@ -24,7 +24,6 @@ $transport = new Zend_Mail_Transport_Mandrill($apiKey, [
 ]);
 
 Zend_Mail::setDefaultTransport($transport);
-
 ```
 
 After this, just use `Zend_Mail` as usual.
