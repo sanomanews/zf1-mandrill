@@ -61,13 +61,24 @@ class Zend_Mail_Transport_Mandrill extends Zend_Mail_Transport_Abstract
      */
     protected function buildMessage()
     {
-        return array_merge($this->messageOptions, [
-            'html'       => $this->body,
-            'text'       => $this->body,
+        $options = [
             'subject'    => $this->_mail->getSubject(),
             'from_email' => $this->_mail->getFrom(),
             'to'         => $this->buildRecipients(),
-        ]);
+        ];
+
+        $html = $this->_mail->getBodyHtml();
+        $text = $this->_mail->getBodyText();
+
+        if ($html) {
+            $options['html'] = $html->getRawContent();
+        }
+
+        if ($text) {
+            $options['text'] = $text->getRawContent();
+        }
+
+        return array_merge($this->messageOptions, $options);
     }
 
 
