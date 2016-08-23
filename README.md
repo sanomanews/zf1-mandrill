@@ -4,8 +4,17 @@ This is a very basic Mandrill transport wrapper for Zend Framework 1.x.
 
 ## Installation
 
-```
-composer require sanoma/zf1-mandrill
+`composer require sanoma/zf1-mandrill`
+
+You will need to manually specify the repository in your `composer.json` for Composer to find it:
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://gitlab.sanomagames.com/sanoma/zf1-mandrill.git"
+    }
+],
 ```
 
 ## Usage
